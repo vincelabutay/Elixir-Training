@@ -1,9 +1,9 @@
-defmodule Discuss.MixProject do
+defmodule Hello.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :discuss,
+      app: :hello,
       version: "0.1.0",
       elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
@@ -19,7 +19,7 @@ defmodule Discuss.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {Discuss.Application, []},
+      mod: {Hello.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end

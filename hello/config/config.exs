@@ -7,15 +7,15 @@
 # General application configuration
 import Config
 
-config :discuss,
-  ecto_repos: [Discuss.Repo]
+config :hello,
+  ecto_repos: [Hello.Repo]
 
 # Configures the endpoint
-config :discuss, DiscussWeb.Endpoint,
+config :hello, HelloWeb.Endpoint,
   url: [host: "localhost"],
-  render_errors: [view: DiscussWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: Discuss.PubSub,
-  live_view: [signing_salt: "X+KpOuwa"]
+  render_errors: [view: HelloWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: Hello.PubSub,
+  live_view: [signing_salt: "m+lcX3FR"]
 
 # Configures the mailer
 #
@@ -24,7 +24,7 @@ config :discuss, DiscussWeb.Endpoint,
 #
 # For production it's recommended to configure a different adapter
 # at the `config/runtime.exs`.
-config :discuss, Discuss.Mailer, adapter: Swoosh.Adapters.Local
+config :hello, Hello.Mailer, adapter: Swoosh.Adapters.Local
 
 # Swoosh API client is needed for adapters other than SMTP.
 config :swoosh, :api_client, false

@@ -1,11 +1,11 @@
 import Config
 
 # Configure your database
-config :discuss, Discuss.Repo,
+config :hello, Hello.Repo,
   username: "postgres",
   password: "Vincelabutay12345!",
   hostname: "localhost",
-  database: "discuss_dev",
+  database: "hello_dev",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
@@ -16,14 +16,14 @@ config :discuss, Discuss.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with esbuild to bundle .js and .css sources.
-config :discuss, DiscussWeb.Endpoint,
+config :hello, HelloWeb.Endpoint,
   # Binding to loopback ipv4 address prevents access from other machines.
   # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
   http: [ip: {127, 0, 0, 1}, port: 4000],
   check_origin: false,
   code_reloader: true,
   debug_errors: true,
-  secret_key_base: "t/83dMMNe3saCuFe4QeVN8VcGosnNOeroEzO3JL6Tr/ZdI5+50xcbXDzERSbC4ak",
+  secret_key_base: "W/46WjrBIXvL77zrngjBZXlenFx4sEtFZ6sCh7RsT8US4r4xpJ1yGcA5dcAkz6MH",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
@@ -54,13 +54,13 @@ config :discuss, DiscussWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :discuss, DiscussWeb.Endpoint,
+config :hello, HelloWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/discuss_web/(live|views)/.*(ex)$",
-      ~r"lib/discuss_web/templates/.*(eex)$"
+      ~r"lib/hello_web/(live|views)/.*(ex)$",
+      ~r"lib/hello_web/templates/.*(eex)$"
     ]
   ]
 

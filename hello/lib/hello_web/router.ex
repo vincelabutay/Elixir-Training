@@ -1,11 +1,11 @@
-defmodule DiscussWeb.Router do
-  use DiscussWeb, :router
+defmodule HelloWeb.Router do
+  use HelloWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {DiscussWeb.LayoutView, :root}
+    plug :put_root_layout, {HelloWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,15 +14,15 @@ defmodule DiscussWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", DiscussWeb do
+  scope "/", HelloWeb do
     pipe_through :browser
 
     get "/", PageController, :index
-    get "/topics/new", TopicController, :new
+    get "/hello", HelloController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", DiscussWeb do
+  # scope "/api", HelloWeb do
   #   pipe_through :api
   # end
 
@@ -39,7 +39,7 @@ defmodule DiscussWeb.Router do
     scope "/" do
       pipe_through :browser
 
-      live_dashboard "/dashboard", metrics: DiscussWeb.Telemetry
+      live_dashboard "/dashboard", metrics: HelloWeb.Telemetry
     end
   end
 

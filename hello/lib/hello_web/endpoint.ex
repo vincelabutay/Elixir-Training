@@ -1,13 +1,13 @@
-defmodule DiscussWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :discuss
+defmodule HelloWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :hello
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_discuss_key",
-    signing_salt: "G2krIi8R"
+    key: "_hello_key",
+    signing_salt: "a/26AQ27"
   ]
 
   socket "/live", Phoenix.LiveView.Socket, websocket: [connect_info: [session: @session_options]]
@@ -18,7 +18,7 @@ defmodule DiscussWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :discuss,
+    from: :hello,
     gzip: false,
     only: ~w(assets fonts images favicon.ico robots.txt)
 
@@ -28,7 +28,7 @@ defmodule DiscussWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :discuss
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :hello
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -46,5 +46,5 @@ defmodule DiscussWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug DiscussWeb.Router
+  plug HelloWeb.Router
 end

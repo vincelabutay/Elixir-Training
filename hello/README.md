@@ -1,4 +1,4 @@
-# Discuss
+# Hello
 
 To start your Phoenix server:
 
