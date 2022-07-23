@@ -17,15 +17,13 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 - Docs: https://hexdocs.pm/phoenix
 - Forum: https://elixirforum.com/c/phoenix-forum
 - Source: https://github.com/phoenixframework/phoenix
-
-mix new <app name>
-iex -S mix - run program
-mix phx.new <app name>
-mix ecto.create - database configure
-mix phx.server - start phx
-iex -S mix phx.server - run in IEx
-
-MVC - model view controller paradigm
-DiscussWeb.PageView.render
-mix ecto.gen.migration <name> - add to database
-mix ecto.migrate - create topics
+  -mix new <app name>
+  -iex -S mix - run program
+  -mix phx.new <app name>
+  -mix ecto.create - database configure
+  -mix phx.server - start phx
+  -iex -S mix phx.server - run in IEx
+  -MVC - model view controller paradigm
+  -DiscussWeb.PageView.render
+  -mix ecto.gen.migration <name> - add to database
+  -mix ecto.migrate - create topics
